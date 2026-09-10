@@ -57,6 +57,15 @@ if (config.nodeEnv === 'development') {
 // Global General Rate Limiter
 app.use('/api/', generalLimiter);
 
+// API root
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Farmer Market Connect API is running',
+    health: '/api/health'
+  });
+});
+
 // Health Check
 app.get('/api/health', (req, res) => {
   res.status(200).json({
