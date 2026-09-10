@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-earth-50 text-earth-900 dark:bg-earth-950 dark:text-earth-100;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-earth-300 dark:bg-earth-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-earth-400 dark:bg-earth-600;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-panel {
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Shimmer animation for skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(229,231,235,0.4) 0%, rgba(243,244,246,0.9) 50%, rgba(229,231,235,0.4) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(90deg, rgba(41,37,36,0.5) 0%, rgba(68,64,60,0.8) 50%, rgba(41,37,36,0.5) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}

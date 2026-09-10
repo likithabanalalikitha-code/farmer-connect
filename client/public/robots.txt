@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /farmer/
+Disallow: /checkout
+Disallow: /orders
+
+Sitemap: https://farmermarketconnect.com/sitemap.xml
