@@ -13,9 +13,7 @@ const connectDB = async () => {
   } catch (error) {
     console.error(`❌ MongoDB Connection Error: ${error.message}`);
     console.log('ℹ️  Tip: If running locally without local MongoDB, configure MONGO_URI in server/.env or spin up MongoDB Atlas.');
-    if (config.nodeEnv === 'production') {
-      process.exit(1);
-    }
+    throw error;
   }
 };
 
